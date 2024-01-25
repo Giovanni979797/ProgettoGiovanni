@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import eu.hansolo.medusa.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import org.controlsfx.control.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="742.0" prefWidth="1266.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.electra.canbusdemo.MainViewController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="793.0" minWidth="10.0" prefWidth="648.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="766.0" minWidth="10.0" prefWidth="630.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TitledPane alignment="CENTER" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1000.0" prefWidth="767.0" text="INPUT">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="974.0" prefWidth="764.0" style="-fx-background-color: rgb(60,64,67);">
+               <children>
+                  <TitledPane animated="false" collapsible="false" layoutX="362.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="295.0" text="EMERGENCY STOP" AnchorPane.leftAnchor="340.4" AnchorPane.rightAnchor="5.0">
+                    <content>
+                      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="74.0" prefWidth="286.0" style="-fx-background-color: rgb(90,97,101);">
+                           <children>
+                              <ToggleButton fx:id="scram" layoutX="100.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#scramButtonAction" prefHeight="47.0" prefWidth="94.0" text="SCRAM" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane animated="false" collapsible="false" layoutX="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="101.0" prefWidth="334.0" text="DEVICE CONNECTION">
+                    <content>
+                      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="90.0" prefWidth="354.0" style="-fx-background-color: rgb(90,97,101);">
+                           <children>
+                              <ComboBox fx:id="deviceComboBox" layoutX="25.0" layoutY="24.0" prefWidth="150.0" />
+                              <Button fx:id="connectButton" layoutX="226.0" layoutY="24.0" mnemonicParsing="false" onAction="#connectButtonAction" text="Connect" />
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane animated="false" collapsible="false" layoutX="5.0" layoutY="106.0" prefHeight="104.0" prefWidth="338.0" text="TRACTION MODE">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="79.0" prefWidth="340.0" style="-fx-background-color: rgb(90,97,101);">
+                           <children>
+                              <CheckBox fx:id="in_Forward" layoutX="33.0" layoutY="24.0" mnemonicParsing="false" text="Forward" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></CheckBox>
+                              <CheckBox fx:id="in_Reverse" layoutX="33.0" layoutY="53.0" mnemonicParsing="false" text="Reverse" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></CheckBox>
+                              <ComboBox fx:id="in_SportEcoChoices" layoutX="179.0" layoutY="20.0" prefWidth="150.0" />
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane animated="false" collapsible="false" layoutX="359.0" layoutY="106.0" prefHeight="238.0" prefWidth="281.0" text="CONTACTORS" AnchorPane.rightAnchor="5.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="217.0" prefWidth="304.0" style="-fx-background-color: rgb(90,97,101);">
+                           <children>
+                              <VBox layoutX="11.0" layoutY="32.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="74.0" prefWidth="283.0">
+                                 <children>
+                                    <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="36.0" prefWidth="135.0">
+                                       <children>
+                                          <Label fx:id="in_Contactor1Label" prefHeight="34.0" prefWidth="118.0" text="Contactor 1" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="36.0" prefWidth="44.0" text="Charge" textFill="WHITE" />
+                                          <ToggleSwitch fx:id="in_contactor1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="36.0" prefWidth="34.0" />
+                                          <Label fx:id="in_Discharge1Label" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="63.0" text="  Discharge" textFill="WHITE" />
+                                       </children>
+                                    </HBox>
+                                    <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="36.0" prefWidth="135.0">
+                                       <children>
+                                          <Label fx:id="in_Contactor2Label" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="36.0" prefWidth="118.0" text="Contactor 2" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="36.0" prefWidth="44.0" text="Charge" textFill="WHITE" />
+                                          <ToggleSwitch fx:id="in_contactor2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="36.0" prefWidth="34.0" />
+                                          <Label fx:id="in_Discharge2Label" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="63.0" text="  Discharge" textFill="WHITE" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="80.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane animated="false" collapsible="false" layoutX="6.0" layoutY="353.0" prefHeight="161.0" prefWidth="642.0" text="CHARGER CONFIGURATION">
+                    <content>
+                      <AnchorPane layoutX="2.0" minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="625.0" style="-fx-background-color: rgb(90,97,101);">
+                           <children>
+                              <Separator layoutX="388.0" orientation="VERTICAL" prefHeight="185.0" prefWidth="7.0" />
+                              <VBox layoutX="417.0" layoutY="38.0" prefHeight="74.0" prefWidth="188.0">
+                                 <children>
+                                    <Label fx:id="in_ChargerProfileLabel" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="124.0" text="Charger Profile" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="39.0" prefWidth="201.0">
+                                       <children>
+                                          <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="148.0" text="Costant Current" textFill="WHITE" />
+                                          <ToggleSwitch fx:id="in_chargerProfile" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="35.0" />
+                                          <Label fx:id="in_CustomLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="120.0" text=" Custom" textFill="WHITE" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="29.0" layoutY="20.0" prefHeight="109.0" prefWidth="275.0">
+                                 <children>
+                                    <HBox fx:id="in_TorqueBox1" prefHeight="39.0" prefWidth="396.0">
+                                       <children>
+                                          <Label fx:id="in_DesiredTorqueLabel1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="106.0" text="Current Treshold" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="in_desiredTorque1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="78.0" style="-fx-background-color: rgb(169,169,169);" />
+                                          <Label fx:id="in_NmLabel1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="92.0" text="  Ampere" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Italic" size="12.0" />
+                                             </font></Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="in_VelocityBox1" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="396.0">
+                                       <children>
+                                          <Label fx:id="in_DesiredVelocityLabel1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="106.0" text="Voltage Treshold" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="in_desiredVelocity1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="78.0" style="-fx-background-color: rgb(169,169,169);" />
+                                          <Label fx:id="in_KmhLabel1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="91.0" text="  Volt" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Italic" size="12.0" />
+                                             </font></Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="30.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane animated="false" collapsible="false" layoutX="6.0" layoutY="522.0" prefHeight="188.0" prefWidth="151.0" text="CONTROL MODE" AnchorPane.leftAnchor="6.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="161.0" style="-fx-background-color: rgb(90,97,101);">
+                           <children>
+                              <HBox layoutX="11.0" layoutY="86.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="36.0" prefWidth="146.0">
+                                 <children>
+                                    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="36.0" prefWidth="44.0" text="Torque" textFill="WHITE" />
+                                 </children>
+                              </HBox>
+                              <Label fx:id="in_VelocityLabel" layoutX="88.0" layoutY="88.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="73.0" text=" Velocity" textFill="WHITE" />
+                              <ToggleSwitch fx:id="in_controlMode" layoutX="52.0" layoutY="85.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="36.0" prefWidth="29.0" />
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane animated="false" collapsible="false" layoutX="6.0" layoutY="215.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="129.0" prefWidth="334.0" text="PARKING/CHARGING MODE">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="112.0" prefWidth="365.0" style="-fx-background-color: rgb(90,97,101);">
+                           <children>
+                              <CheckBox fx:id="in_ParkingMode" layoutX="33.0" layoutY="27.0" mnemonicParsing="false" text="Parking Mode" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox fx:id="in_ChargingMode" layoutX="33.0" layoutY="76.0" mnemonicParsing="false" text="Charging Mode" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </CheckBox>
+                              <HBox layoutX="234.0" layoutY="84.0" prefHeight="41.0" prefWidth="96.0" />
+                              <Label layoutX="242.0" layoutY="63.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Grid" textFill="WHITE" />
+                              <ToggleSwitch fx:id="in_GridResChoice" layoutX="265.0" layoutY="51.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="41.0" prefWidth="35.0" />
+                              <Label layoutX="300.0" layoutY="51.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="41.0" prefWidth="38.0" text=" Res" textFill="WHITE" />
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane animated="false" collapsible="false" layoutX="181.6" layoutY="522.0" prefHeight="187.0" prefWidth="471.0" text="SIMULATOR" AnchorPane.leftAnchor="172.0" AnchorPane.rightAnchor="-4.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="544.0" style="-fx-background-color: rgb(90,97,101);">
+                           <children>
+                              <Gauge fx:id="in_VelocityTorque" layoutX="245.0" layoutY="5.0" prefHeight="161.0" prefWidth="212.0" />
+                              <VBox layoutX="14.0" layoutY="31.0" prefHeight="109.0" prefWidth="231.0">
+                                 <children>
+                                    <HBox fx:id="in_TorqueBox" prefHeight="39.0" prefWidth="396.0">
+                                       <children>
+                                          <Label fx:id="in_DesiredTorqueLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="106.0" text="Desired Torque" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="in_desiredTorque" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="78.0" style="-fx-background-color: rgb(169,169,169);" />
+                                          <Label fx:id="in_NmLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="40.0" text="  Nm" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Italic" size="12.0" />
+                                             </font></Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="in_VelocityBox" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="396.0">
+                                       <children>
+                                          <Label fx:id="in_DesiredVelocityLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="106.0" text="Desired Velocity" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="in_desiredVelocity" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="78.0" style="-fx-background-color: rgb(169,169,169);" />
+                                          <Label fx:id="in_KmhLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="40.0" text="   Km/h" textFill="WHITE" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="30.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane alignment="CENTER" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="OUTPUT" GridPane.columnIndex="1">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="975.0" prefWidth="753.0" style="-fx-background-color: rgb(60,64,67);">
+               <children>
+                   <TitledPane animated="false" collapsible="false" layoutX="10.0" prefHeight="160.0" prefWidth="595.0" text="BATTERY PACK">
+                       <content>
+                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: rgb(90,97,101);">
+                           <children>
+                                     <VBox layoutX="399.0" layoutY="2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="136.0" prefWidth="180.0">
+                                         <children>
+                                             <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="11.0" prefWidth="180.0" text="SOC" textAlignment="CENTER" textFill="WHITE">
+                                                 <font>
+                                                     <Font name="System Bold" size="14.0" />
+                                                 </font>
+                                             </Label>
+                                             <Gauge fx:id="out_battery" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="101.0" prefWidth="180.0">
+                                                 <VBox.margin>
+                                                     <Insets top="10.0" />
+                                                 </VBox.margin>
+                                             </Gauge>
+                                         </children>
+                                     </VBox>
+                                     <Gauge fx:id="out_currentBatteryPackGauge" layoutX="212.0" layoutY="5.0" prefHeight="136.0" prefWidth="192.0" />
+                                     <Gauge fx:id="out_voltageBatteryPackGauge" layoutY="8.0" prefHeight="136.0" prefWidth="192.0" />
+                           </children>
+                           </AnchorPane>
+                       </content>
+                   </TitledPane>
+                   <TitledPane animated="false" collapsible="false" layoutX="10.0" layoutY="167.0" prefHeight="158.0" prefWidth="595.0" text="CHARGER">
+                       <content>
+                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="689.0" style="-fx-background-color: rgb(90,97,101);">
+                               <children>
+                                   <Gauge fx:id="out_voltageChargerGauge" layoutY="5.0" prefHeight="136.0" prefWidth="192.0" />
+                                   <Gauge fx:id="out_currentChargerGauge" layoutX="212.0" layoutY="5.0" prefHeight="136.0" prefWidth="192.0" />
+                              <VBox layoutX="421.0" layoutY="31.0" prefHeight="70.0" prefWidth="148.0">
+                                 <children>
+                                    <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Mode" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <StatusBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgb(169,169,169); -fx-effect: innershadow( three-pass-box, rgba(0,0,0,0.2), 5, 0.0, 0, 1);">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </StatusBar>
+                                 </children>
+                              </VBox>
+                               </children></AnchorPane>
+                       </content>
+                   </TitledPane>
+                  <TitledPane animated="false" collapsible="false" layoutX="10.0" layoutY="331.0" prefHeight="169.0" prefWidth="595.0" text="ENGINE">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="695.0" style="-fx-background-color: rgb(90,97,101);" stylesheets="@Style.css">
+                           <children>
+                              <Gauge fx:id="out_velEngGauge" layoutY="5.0" prefHeight="136.0" prefWidth="192.0" />
+                              <Gauge fx:id="out_torqueEngGauge" layoutX="212.0" layoutY="5.0" prefHeight="136.0" prefWidth="192.0" />
+                              <Gauge fx:id="out_motorTemp" layoutX="441.0" layoutY="5.0" prefHeight="133.0" prefWidth="132.0" />
+                              <Separator layoutX="421.0" layoutY="-2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="186.0" prefWidth="7.0" />
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                   <TitledPane animated="false" collapsible="false" layoutX="9.0" layoutY="646.0" prefHeight="63.0" prefWidth="600.0" text="LOG FILE">
+                       <content>
+                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="553.0" style="-fx-background-color: rgb(90,97,101);">
+                               <children>
+                                   <TextField layoutX="27.0" layoutY="3.0" prefHeight="28.0" prefWidth="533.0" style="-fx-background-color: rgb(169,169,169); -fx-effect: innershadow( three-pass-box, rgba(0,0,0,0.2), 5, 0.0, 0, 1);" />
+                               </children></AnchorPane>
+                       </content>
+                   </TitledPane>
+                  <TitledPane animated="false" collapsible="false" layoutX="10.0" layoutY="506.0" prefHeight="137.0" prefWidth="595.0" text="STATUS">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="710.0" style="-fx-background-color: rgb(90,97,101);">
+                           <children>
+                              <Separator layoutX="227.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="125.0" prefWidth="7.0" />
+                              <Separator layoutX="420.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="124.0" prefWidth="8.0" />
+                              <VBox layoutX="428.0" layoutY="28.0" prefHeight="70.0" prefWidth="148.0">
+                                 <children>
+                                    <StatusBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgb(169,169,169); -fx-effect: innershadow( three-pass-box, rgba(0,0,0,0.2), 5, 0.0, 0, 1);">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin></StatusBar>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="14.0" layoutY="-11.0" prefHeight="114.0" prefWidth="169.0">
+                                 <children>
+                                    <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="56.0" prefWidth="81.0" text="Contactors" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="36.0" prefWidth="164.0">
+                                       <children>
+                                          <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="23.0" text="1" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <StatusBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="144.0" style="-fx-background-color: rgb(169,169,169); -fx-effect: innershadow( three-pass-box, rgba(0,0,0,0.2), 5, 0.0, 0, 1);" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="38.0" prefHeight="36.0" prefWidth="164.0">
+                                       <children>
+                                          <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="23.0" text="2" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <StatusBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="144.0" style="-fx-background-color: rgb(169,169,169); -fx-effect: innershadow( three-pass-box, rgba(0,0,0,0.2), 5, 0.0, 0, 1);" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="246.0" layoutY="11.0" prefHeight="70.0" prefWidth="148.0">
+                                 <children>
+                                    <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Emergency Stop" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <StatusBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgb(169,169,169); -fx-effect: innershadow( three-pass-box, rgba(0,0,0,0.2), 5, 0.0, 0, 1);">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </StatusBar>
+                                 </children>
+                              </VBox>
+                              <Label alignment="CENTER" layoutX="445.0" layoutY="13.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Traction Mode" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+               </children></AnchorPane>
+        </content>
+      </TitledPane>
+   </children>
+</GridPane>
